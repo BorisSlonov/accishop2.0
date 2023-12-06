@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accishop 2.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito:wght@300;400;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+        integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .scroll-block {
+            overflow: hidden;
+
+        }
+
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: #151430;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            animation: loader 0.75s 3.5s ease-in forwards;
+            z-index: 999999;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background-image: url('/img2/logo.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: relative;
+            animation: progress 3.5s ease-in-out forwards;
+        }
+
+        .progress-bar:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            animation: progress 4s ease-in-out forwards;
+            border-radius: 50%;
+            background-color: #fc37ff5b;
+            width: 160px;
+            height: 160px;
+        }
+
+        @keyframes loader {
+            to {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+
+        @keyframes progress {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(5);
+                opacity: 1;
+            }
+        }
+
+        @media(max-width:1023px) {
+            @keyframes progress {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0);
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) scale(2);
+                    opacity: 1;
+                }
+            }
+        }
+
+        @media(max-width:767px) {
+            @keyframes progress {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0);
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css2/style.css">
+</head>
+
+<body class="body scroll-block">
+    <div class="loader">
+        <div class="progress-bar"></div>
+    </div>
+    <div class="mainWrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__body">
+                    <div class="header__item">
+                        <a class="header__logo" href="/">
+                        </a>
+                    </div>
+                    <div class="header__item">
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        Оптовый заказ
+                                    </a>
+                                </li>
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        О нас
+                                    </a>
+                                </li>
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        Каталог
+                                    </a>
+                                </li>
+                                <li class="header__li">
+                                    <a href="#" class="header__a">
+                                        Партнёрство
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__item">
+                        <div class="header__btns">
+                            <a class="header__btn header__btn_1" href="#">
+                                <img loading="lazy" src="img2/icons/person.svg" alt="person">
+                            </a>
+                            <a class="header__btn header__btn_2" href="#">
+                                <img loading="lazy" src="img2/icons/cart.svg" alt="cart">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <!-- sectionPage1 -->
+            <section class="sectionPage1">
+                <div class="page1">
+                    <div class="container">
+                        <div class="page1__body">
+                            <div class="page1__item">
+                                <h1 class="h1">
+                                    Ваш <span class="accent">успех</span> в социальных сетях начинается здесь !
+                                </h1>
+                                <p class="page1__p">
+                                    Качественные аккаунты Telegram, Instagram , Tik-tok , Whatsapp , Ok.ru , Rambler ,
+                                    Vpn , и все это в одном месте !
+                                </p>
+                                <a class="page1__btn transBtn transBtn_20" href="#">
+                                    Заказать оптом
+                                </a>
+                            </div>
+                            <div class="page1__item">
+                                <div class="telAnime">
+                                    <img loading="lazy" class="telAnime__img telAnime__img_inst animate__fadeInUp animate__animated animate__delay-4s"
+                                        src="img2/animeTel/inst.png" alt="">
+                                    <img loading="lazy" class="telAnime__img telAnime__img_tg" src="img2/animeTel/tg.png" alt="">
+                                    <img loading="lazy" class="telAnime__img telAnime__img_tt" src="img2/animeTel/tt.png" alt="">
+                                    <img loading="lazy" class="telAnime__img telAnime__img_vk" src="img2/animeTel/vk.png" alt="">
+                                    <img loading="lazy" class="telAnime__img telAnime__img_wa" src="img2/animeTel/wa.png" alt="">
+
+                                    <!-- icons -->
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_inst " src="img2/animeTel/insti.svg"
+                                        alt="">
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_ok " src="img2/animeTel/oki.svg" alt="">
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_tg " src="img2/animeTel/tgi.svg" alt="">
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_tt " src="img2/animeTel/tti.svg" alt="">
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_vk " src="img2/animeTel/vki.svg" alt="">
+                                    <img loading="lazy" class="telAnime__icon telAnime__icon_wa " src="img2/animeTel/wai.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page1__footer">
+                            <ul class="page1Menu">
+                                <li class="page1Menu__li">
+                                    <a class="page1Menu__a" href="#">
+                                        <img loading="lazy" class="page1Menu__img" data-target="telAnime__img_inst"
+                                            src="img2/icons/instMenu.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="page1Menu__li">
+                                    <a class="page1Menu__a" href="#">
+                                        <img loading="lazy" class="page1Menu__img" data-target="telAnime__img_tg"
+                                            src="img2/icons/tgMenu.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="page1Menu__li">
+                                    <a class="page1Menu__a" href="#">
+                                        <img loading="lazy" class="page1Menu__img" data-target="telAnime__img_tt"
+                                            src="img2/icons/ttMenu.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="page1Menu__li">
+                                    <a class="page1Menu__a" href="#">
+                                        <img loading="lazy" class="page1Menu__img" data-target="telAnime__img_vk"
+                                            src="img2/icons/vkMenu.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="page1Menu__li">
+                                    <a class="page1Menu__a" href="#">
+                                        <img loading="lazy" class="page1Menu__img" data-target="telAnime__img_wa"
+                                            src="img2/icons/waMenu.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="radiusBg">
+                <!-- sectionFind -->
+                <section class="sectionFind">
+                    <div class="find">
+                        <div class="container">
+                            <div class="find__body">
+                                <div class="find__item">
+                                    <div class="swiper swiperProd">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="prodCard">
+                                                    <div class="prodCard__body prodCard__body_wa">
+                                                        <div class="prodCard__header prodCard__header_tg">
+                                                            telegram 3
+                                                        </div>
+                                                        <ul class="prodCard__ul">
+                                                            <li class="prodCard__li">
+                                                                Пользуйтесь из любой точки мира
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                оптовая скидка
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Приватный доступ к данным аккаунта
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Быстрое соединение в любом регионе
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Выбор номеров из более чем 20 стран
+                                                            </li>
+                                                        </ul>
+                                                        <div class="prodCard__price">
+                                                            от 0.5 $
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="prodCard">
+                                                    <div class="prodCard__body prodCard__body_inst">
+                                                        <div class="prodCard__header prodCard__header_tg">
+                                                            telegram 3
+                                                        </div>
+                                                        <ul class="prodCard__ul">
+                                                            <li class="prodCard__li">
+                                                                Пользуйтесь из любой точки мира
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                оптовая скидка
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Приватный доступ к данным аккаунта
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Быстрое соединение в любом регионе
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Выбор номеров из более чем 20 стран
+                                                            </li>
+                                                        </ul>
+                                                        <div class="prodCard__price">
+                                                            от 0.5 $
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="prodCard">
+                                                    <div class="prodCard__body prodCard__body_tg">
+                                                        <div class="prodCard__header prodCard__header_tg">
+                                                            telegram 1
+                                                        </div>
+                                                        <ul class="prodCard__ul">
+                                                            <li class="prodCard__li">
+                                                                Пользуйтесь из любой точки мира
+                                                            </li>
+                                                            <li class="prodCard__li prodCard__li_label">
+                                                                <span class="prodCard__liSpan">
+                                                                    оптовая скидка
+                                                                </span>
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Приватный доступ к данным аккаунта
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Быстрое соединение в любом регионе
+                                                            </li>
+                                                            <li class="prodCard__li">
+                                                                Выбор номеров из более чем 20 стран
+                                                            </li>
+                                                        </ul>
+                                                        <div class="prodCard__price prodCard__price_tip">
+                                                            от 0.5 $
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="revNavigation">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-pagination"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="find__item">
+                                    <h2 class="h2 h2_find scrolOut" data-scroll data-class="animate__fadeInUp">
+                                        У нас вы найдете
+                                    </h2>
+                                    <p class="find__p">
+                                        АККАУНТЫ TELEGRAM TDATA SESSION JSON. КУПИТЬ ТЕЛЕГРАМ. BUY ACCOUNT КАЧЕСТВЕННЫЕ
+                                        АККАУНТЫ. ТОЛЬКО У НАС! КУПИТЬ АККАУНТЫ ВКОНТАКТЕ, КУПИТЬ АККАНТЫ ТЕЛЕГРАМ,
+                                        КУПИТЬ
+                                        ПОЧТУ РАМБЛЕР, ДЕШЕВЫЕ ВК АККАУНТЫ, ТЕЛЕГРАМ TDATA КУПИТЬ, ВК АВТОРЕГ КУПИТЬ,
+                                        АККАУНТЫ ИНСТАГРАМ.
+                                    </p>
+                                    <div class="find__btns">
+                                        <div class="figureBtns">
+                                            <a href="#" class="figureBtns__a figureBtns__a_1 figureBtns__a_cats">
+                                                КАТЕГОРИИ
+                                            </a>
+                                            <a href="#" class="figureBtns__a figureBtns__a_2 figureBtns__a_catalog">
+                                                Каталог
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a class="find__faq" href="#">
+                                        <span class="find__faqSpan">
+                                            Прочтите перед покупкой
+                                        </span>
+                                        <span class="find__faqSpan">
+                                            FAQ
+                                        </span>
+                                        <svg class="find__faqSvg" xmlns="http://www.w3.org/2000/svg" width="7"
+                                            height="13" viewBox="0 0 7 13" fill="none">
+                                            <path
+                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                stroke="#01ABAA" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sectionWhy -->
+                <section class="sectionWhy">
+                    <div class="why">
+                        <div class="container">
+                            <h2 class="h2 h2_why scrolOut" data-scroll data-class="animate__fadeInUp">
+                                Почему наши аккаунты - ваш лучший выбор ?
+                            </h2>
+                            <div class="why__body">
+                                <div class="why__item">
+                                    <h3 class="why__h3">
+                                        <img loading="lazy" src="img2/icons/why1.svg" alt="icon">
+                                        <span class="why__h3Span">
+                                            Экономьте время на создании аккаунтов
+                                        </span>
+                                    </h3>
+                                    <p class="why__p">
+                                        ВРЕМЯ - это ценный ресурс, и мы здесь, чтобы помочь вам его сэкономить. Мы берем
+                                        на
+                                        себя весь процесс создания аккаунтов, освобождая вас от этой рутины. С нами вы
+                                        можете начать взаимодействовать с вашей аудиторией быстрее!
+                                    </p>
+                                    <a class="why__a" href="#">
+                                        <span class="why__aSpan">
+                                            Ассортимент
+                                        </span>
+                                        <svg class="why__aSvg" xmlns="http://www.w3.org/2000/svg" width="7" height="13"
+                                            viewBox="0 0 7 13" fill="none">
+                                            <path
+                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                stroke="#01ABAA" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="why__item">
+                                    <h3 class="why__h3">
+                                        <img loading="lazy" src="img2/icons/why2.svg" alt="icon">
+                                        <span class="why__h3Span">
+                                            Взаимодействуйте со всем миром без границ
+                                        </span>
+                                    </h3>
+                                    <p class="why__p">
+                                        С нашими аккаунтами вы не ограничены регионом. Используя местные номера
+                                        телефонов и
+                                        различные прокси, мы создаем аккаунты, которые подходят для различных регионов.
+                                        Теперь вы можете взаимодействовать с людьми по всему миру!
+                                    </p>
+                                    <a class="why__a" href="#">
+                                        <span class="why__aSpan">
+                                            Приобрести
+                                        </span>
+                                        <svg class="why__aSvg" xmlns="http://www.w3.org/2000/svg" width="7" height="13"
+                                            viewBox="0 0 7 13" fill="none">
+                                            <path
+                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                stroke="#01ABAA" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="why__item">
+                                    <h3 class="why__h3">
+                                        <img loading="lazy" src="img2/icons/why3.svg" alt="icon">
+                                        <span class="why__h3Span">
+                                            теперь Покупайте столько сколько вам нужно!
+                                        </span>
+                                    </h3>
+                                    <p class="why__p">
+                                        В отличие от конкурентов с ограниченным количеством товара, мы предлагаем вам
+                                        возможность покупки оптом. Наша гибкая система позволяет вам приобрести столько
+                                        аккаунтов, сколько вы пожелаете, обеспечивая вас эффективным решением для вашего
+                                        бизнеса!
+                                    </p>
+                                    <a class="why__a" href="#">
+                                        <span class="why__aSpan">
+                                            Оптовый заказ
+                                        </span>
+                                        <svg class="why__aSvg" xmlns="http://www.w3.org/2000/svg" width="7" height="13"
+                                            viewBox="0 0 7 13" fill="none">
+                                            <path
+                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                stroke="#01ABAA" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sectionReviews -->
+                <section class="sectionReviews">
+                    <div class="reviews">
+                        <div class="container">
+                            <h2 class="h2 scrollOut" data-scroll data-class="animate__fadeInUp">
+                                Ваши мнения важны для нас
+                            </h2>
+                            <div class="reviews__body">
+                                <div class="swiper swiperReviews">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="userReview animate__fadeInUp animate__animated">
+                                                <img loading="lazy" src="img2/rev1.png" alt="" class="userReview__img">
+                                                <div class="userReview__txt">
+                                                    <h3 class="userReview__h3">
+                                                        Сергей
+                                                    </h3>
+                                                    <p class="userReview__p">
+                                                        “Я недавно приобрел новые аккаунты в Telegram через этот сайт
+                                                        для создания каналов и арбитража трафика. Я был приятно удивлен,
+                                                        обнаружив, что все аккаунты остаются активными на протяжении
+                                                        долгого времени и работают именно в нужном мне регионе. Это было
+                                                        очень важно для моего бизнеса. Я очень доволен своим опытом и
+                                                        обязательно буду использовать этот сайт снова в будущем.
+                                                        Отличная работа!”
+                                                    </p>
+                                                    <a class="userReview__a" href="#">
+                                                        <span class="userReview__span">
+                                                            Оставить отзыв
+                                                        </span>
+                                                        <svg class="userReview__aSvg" xmlns="http://www.w3.org/2000/svg"
+                                                            width="7" height="13" viewBox="0 0 7 13" fill="none">
+                                                            <path
+                                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                                stroke="#01ABAA" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="userReview animate__fadeInUp animate__animated">
+                                                <img loading="lazy" src="img2/rev2.png" alt="" class="userReview__img">
+                                                <div class="userReview__txt">
+                                                    <h3 class="userReview__h3">
+                                                        Сергей
+                                                    </h3>
+                                                    <p class="userReview__p">
+                                                        “Я недавно приобрел новые аккаунты в Telegram через этот сайт
+                                                        для создания каналов и арбитража трафика. Я был приятно удивлен,
+                                                        обнаружив, что все аккаунты остаются активными на протяжении
+                                                        долгого времени и работают именно в нужном мне регионе. Это было
+                                                        очень важно для моего бизнеса. Я очень доволен своим опытом и
+                                                        обязательно буду использовать этот сайт снова в будущем.
+                                                        Отличная работа!”
+                                                    </p>
+                                                    <a class="userReview__a" href="#">
+                                                        <span class="userReview__span">
+                                                            Оставить отзыв
+                                                        </span>
+                                                        <svg class="userReview__aSvg" xmlns="http://www.w3.org/2000/svg"
+                                                            width="7" height="13" viewBox="0 0 7 13" fill="none">
+                                                            <path
+                                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                                stroke="#01ABAA" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="userReview animate__fadeInUp animate__animated">
+                                                <img loading="lazy" src="img2/rev3.png" alt="" class="userReview__img">
+                                                <div class="userReview__txt">
+                                                    <h3 class="userReview__h3">
+                                                        Сергей
+                                                    </h3>
+                                                    <p class="userReview__p">
+                                                        “Я недавно приобрел новые аккаунты в Telegram через этот сайт
+                                                        для создания каналов и арбитража трафика. Я был приятно удивлен,
+                                                        обнаружив, что все аккаунты остаются активными на протяжении
+                                                        долгого времени и работают именно в нужном мне регионе. Это было
+                                                        очень важно для моего бизнеса. Я очень доволен своим опытом и
+                                                        обязательно буду использовать этот сайт снова в будущем.
+                                                        Отличная работа!”
+                                                    </p>
+                                                    <a class="userReview__a" href="#">
+                                                        <span class="userReview__span">
+                                                            Оставить отзыв
+                                                        </span>
+                                                        <svg class="userReview__aSvg" xmlns="http://www.w3.org/2000/svg"
+                                                            width="7" height="13" viewBox="0 0 7 13" fill="none">
+                                                            <path
+                                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                                stroke="#01ABAA" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="userReview animate__fadeInUp animate__animated">
+                                                <img loading="lazy" src="img2/rev4.png" alt="" class="userReview__img">
+                                                <div class="userReview__txt">
+                                                    <h3 class="userReview__h3">
+                                                        Сергей
+                                                    </h3>
+                                                    <p class="userReview__p">
+                                                        “Я недавно приобрел новые аккаунты в Telegram через этот сайт
+                                                        для создания каналов и арбитража трафика. Я был приятно удивлен,
+                                                        обнаружив, что все аккаунты остаются активными на протяжении
+                                                        долгого времени и работают именно в нужном мне регионе. Это было
+                                                        очень важно для моего бизнеса. Я очень доволен своим опытом и
+                                                        обязательно буду использовать этот сайт снова в будущем.
+                                                        Отличная работа!”
+                                                    </p>
+                                                    <a class="userReview__a" href="#">
+                                                        <span class="userReview__span">
+                                                            Оставить отзыв
+                                                        </span>
+                                                        <svg class="userReview__aSvg" xmlns="http://www.w3.org/2000/svg"
+                                                            width="7" height="13" viewBox="0 0 7 13" fill="none">
+                                                            <path
+                                                                d="M1 1L6.35858 6.35858C6.43668 6.43668 6.43668 6.56332 6.35858 6.64142L1 12"
+                                                                stroke="#01ABAA" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="revNavigation">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sectionPartners -->
+                <section class="sectionPartners">
+                    <div class="partners">
+                        <div class="container">
+                            <div class="partners__body">
+                                <div class="partners__item">
+                                    <h2 class="h2 h2_partners scrollOut" data-scroll data-class="animate__fadeInUp">
+                                        Вместе мы можем больше !
+                                    </h2>
+                                    <p class="partners__p">
+                                        Присоединяйтесь к нашей <span class="accent">партнерской программе</span> и
+                                        расширьте свои возможности в мире
+                                        социальных сетей!
+                                    </p>
+                                    <div class="partners__btns">
+                                        <div class="figureBtns">
+                                            <a href="#" class="figureBtns__a figureBtns__a_1 figureBtns__a_people">
+                                                стать партнером
+                                            </a>
+                                            <a href="#" class="figureBtns__a figureBtns__a_2 figureBtns__a_quest">
+                                                подробнее
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="partners__item">
+                                    <a href="#" class="partners__plashka">
+                                        <img loading="lazy" style="width:100%; max-width:600px"
+                                            src="https://proxys.io/img/b/new_cursor_468x60.gif">
+                                    </a>
+                                    <a href="#" class="partners__plashka">
+                                        <img loading="lazy" style="width:100%; max-width:600px"
+                                            src="https://proxys.io/img/b/new_cursor_468x60.gif">
+                                    </a>
+                                    <a href="#" class="partners__plashka">
+                                        <img loading="lazy" style="width:100%; max-width:600px"
+                                            src="https://proxys.io/img/b/new_cursor_468x60.gif">
+                                    </a>
+                                    <div class="counters">
+                                        <div class="counters__item">
+                                            <!-- Yandex.Metrika informer -->
+                                            <a href="https://metrika.yandex.ru/stat/?id=90521051&amp;from=informer"
+                                                target="_blank" rel="nofollow"><img loading="lazy" loading="lazy"
+                                                    src="https://informer.yandex.ru/informer/90521051/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                                    style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика"
+                                                    title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+                                                    class="ym-advanced-informer" data-cid="90521051" data-lang="ru"></a>
+                                            <!-- /Yandex.Metrika informer -->
+                                            <!-- Yandex.Metrika counter -->
+                                            <script type="text/javascript">
+                                                (function (m, e, t, r, i, k, a) {
+                                                    m[i] = m[i] || function () {
+                                                        (m[i].a = m[i].a || []).push(arguments)
+                                                    };
+                                                    m[i].l = 1 * new Date();
+                                                    for (let j = 0; j < document.scripts.length; j++) {
+                                                        if (document.scripts[j].src === r) {
+                                                            return;
+                                                        }
+                                                    }
+                                                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                                                })
+                                                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                                                ym(90521051, "init", {
+                                                    clickmap: true,
+                                                    trackLinks: true,
+                                                    params: window.yaParams,
+                                                    accurateTrackBounce: true,
+                                                    webvisor: true
+                                                });
+                                            </script>
+                                            <noscript>
+                                                <div><img loading="lazy" loading="lazy" src="https://mc.yandex.ru/watch/90521051"
+                                                        style="position:absolute; left:-9999px;" alt="" /></div>
+                                            </noscript>
+                                            <!-- /Yandex.Metrika counter -->
+                                            <script type="text/javascript">
+                                                (function (m, e, t, r, i, k, a) {
+                                                    m[i] = m[i] || function () {
+                                                        (m[i].a = m[i].a || []).push(arguments)
+                                                    };
+                                                    m[i].l = 1 * new Date();
+                                                    for (let j = 0; j < document.scripts.length; j++) {
+                                                        if (document.scripts[j].src === r) {
+                                                            return;
+                                                        }
+                                                    }
+                                                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                                                })
+                                                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                                                ym(90521051, "init", {
+                                                    clickmap: true,
+                                                    params: window.yaParams,
+                                                    trackLinks: true,
+                                                    accurateTrackBounce: true,
+                                                    webvisor: true
+                                                });
+                                            </script>
+                                            <noscript>
+                                                <div><img loading="lazy" loading="lazy" src="https://mc.yandex.ru/watch/90521051"
+                                                        style="position:absolute; left:-9999px;" alt="" /></div>
+                                            </noscript>
+                                        </div>
+                                        <div class="counters__item">
+                                            <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+                                                target="_blank"><img loading="lazy" loading="lazy" id="licnt60A5" width="88"
+                                                    height="31" style="border:0"
+                                                    title="LiveInternet: показано число просмотров и посетителей за 24 часа"
+                                                    src="https://counter.yadro.ru/hit?t52.6;r;s1920*1080*24;uhttps%3A//accishop.ru/;h%u0413%u0434%u0435%20%u043A%u0443%u043F%u0438%u0442%u044C%20%u0430%u043A%u043A%u0430%u0443%u043D%u0442%u044B%20%u0442%u0435%u043B%u0435%u0433%u0440%u0430%u043C%3F%20Session%20Json%20account%20tdata.%20Buy%20telegram%20account.;0.4565007971472117"
+                                                    alt=""></a>
+                                            <script>
+                                                (function (d, s) {
+                                                    d.getElementById("licnt60A5").src =
+                                                        "https://counter.yadro.ru/hit?t52.6;r" + escape(d.referrer) +
+                                                        ((typeof (s) == "undefined") ? "" : ";s" + s.width + "*" + s.height + "*" +
+                                                            (s.colorDepth ? s.colorDepth : s.pixelDepth)) + ";u" + escape(d.URL) +
+                                                        ";h" + escape(d.title.substring(0, 150)) + ";" + Math.random()
+                                                })
+                                                    (document, screen)
+                                            </script><!--/LiveInternet-->
+                                        </div>
+                                        <div class="counters__item">
+                                            <!-- Top100 (Kraken) Widget -->
+                                            <span id="top100_widget"><a href="https://top100.rambler.ru/home?id=7698774"
+                                                    target="_blank"><img
+                                                        src="https://kraken.rambler.ru/cnt/?et=pv&amp;v=3.13.44&amp;pid=7698774&amp;tid=t1.7698774.5723591.1701574907780&amp;rid=1701574907.779-920000891&amp;fid=pA8AAENKs1eYjK5WATmheQA%3D&amp;fip=pA8AAENKs1dnTcEBAXBzZgA%3D&amp;eid=477849080226624&amp;aduid=29bf125a-1e13-4dc2-8800-d5af3e5c396a&amp;aduidsc=accishop.ru&amp;stid=1737125253_1701574907783&amp;sn=1&amp;sen=1&amp;ce=1&amp;bs=1920x953&amp;rf&amp;en=UTF-8&amp;pt=%D0%93%D0%B4%D0%B5%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D1%8B%20%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC%3F%20Session%20Json%20account%20tdata.%20Buy%20telegram%20account.&amp;sr=1920x1080&amp;cd=24-bit&amp;la=en-US&amp;ja=0&amp;acn=Mozilla&amp;an=Netscape&amp;pl=Win32&amp;tz=-180&amp;le=2&amp;ct=web&amp;url=https%3A%2F%2Faccishop.ru%2F&amp;lv&amp;exp=%5B%5B%22exp_ws%22%2C%22no%22%5D%2C%5B%22exp_ping%22%2C%22no%22%5D%5D&amp;rn=2060550317"
+                                                        title="Rambler's Top100" alt="Rambler's Top100"
+                                                        border="0"></a></span>
+                                            <!-- END Top100 (Kraken) Widget -->
+
+                                            <!-- Top100 (Kraken) Counter -->
+                                            <script>
+                                                    (function (w, d, c) {
+                                                        (w[c] = w[c] || []).push(function () {
+                                                            var options = {
+                                                                project: 7698774,
+                                                                element: 'top100_widget',
+                                                            };
+                                                            try {
+                                                                w.top100Counter = new top100(options);
+                                                            } catch (e) { }
+                                                        });
+                                                        var n = d.getElementsByTagName("script")[0],
+                                                            s = d.createElement("script"),
+                                                            f = function () {
+                                                                n.parentNode.insertBefore(s, n);
+                                                            };
+                                                        s.type = "text/javascript";
+                                                        s.async = true;
+                                                        s.src =
+                                                            (d.location.protocol === "https:" ? "https:" : "http:") +
+                                                            "//st.top100.ru/top100/top100.js";
+
+                                                        if (w.opera === "[object Opera]") {
+                                                            d.addEventListener("DOMContentLoaded", f, false);
+                                                        } else {
+                                                            f();
+                                                        }
+                                                    })(window, document, "_top100q");
+                                            </script>
+                                            <noscript>
+                                                <img loading="lazy" loading="lazy" src="//counter.rambler.ru/top100.cnt?pid=7698774"
+                                                    alt="Топ-100" />
+                                            </noscript>
+                                            <!-- END Top100 (Kraken) Counter -->
+                                        </div>
+                                        <div class="counters__item">
+                                            <a href="https://fkwallet.com"><img
+                                                    src="https://fkwallet.com/assets/2017/images/btns/iconsmall_wallet9.png"
+                                                    title="Криптовалютный кошелек"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="lastBg">
+                <!-- sectionOpt -->
+                <section class="sectionOpt">
+                    <div class="opt">
+                        <div class="container">
+                            <div class="opt__body">
+                                <div class="opt__item">
+                                    <h2 class="opt__h2 scrollOut" data-scroll data-class="animate__fadeInUp">
+                                        Всего <span class="accent">пара минут</span> от оформления заказа до начала
+                                        работы !
+                                    </h2>
+                                    <img loading="lazy" class="opt__svg" src="img2/stepsRu.svg" alt="steps">
+                                    <p class="opt__subtitle">
+                                        Нужна помощь с выбором?
+                                    </p>
+                                    <a href="#" class="opt__btn transBtn">
+                                        связаться
+                                    </a>
+                                </div>
+                                <div class="opt__item">
+                                    <form class="opt__form" method="post">
+                                        <h3 class="opt__h3">
+                                            Оптовый заказ
+                                        </h3>
+                                        <div>
+                                            <div class="custom-select">
+                                                <div class="select-selected" id="select-selected" data-price="150.00"
+                                                    data-priceen="0.87" data-name="Телеграм" data-nameen="Telegram"
+                                                    data-country="Россия" data-countryen="Russia"
+                                                    data-iconurl="https://accishop.ru/img/flags/ru.svg"
+                                                    data-discount101_300="1" data-discount301_500="2"
+                                                    data-discount501_1000="3" data-discount1001_3000="5"
+                                                    data-discountover3000="6">
+                                                    <img loading="lazy" src="https://accishop.ru/img/tg_opt.svg"
+                                                        class="select-selected__iconurl" alt="лого соц. сети">
+                                                    <div class="select-selected__txt">
+                                                        <div class="select-selected__name">Телеграм</div>
+                                                        <div class="select-selected__country">Россия</div>
+                                                    </div>
+                                                </div><input type="hidden" id="currentDataName" name="currentDataName"
+                                                    value="Телеграм"><input type="hidden" id="currentDataCountry"
+                                                    name="currentDataCountry" value="Россия">
+                                                <div class="select-dropdown">
+                                                    <div class="select-option" data-value="option1" data-price="150.00"
+                                                        data-priceen="0.87" data-name="Телеграм" data-nameen="Telegram"
+                                                        data-country="Россия" data-countryen="Russia"
+                                                        data-iconurl="https://accishop.ru/img/flags/ru.svg"
+                                                        data-discount101_300="1" data-discount301_500="2"
+                                                        data-discount501_1000="3" data-discount1001_3000="5"
+                                                        data-discountover3000="6"
+                                                        style="--icon-url: url(https://accishop.ru/img/flags/ru.svg);">
+                                                        Россия</div>
+                                                    <div class="select-option" data-value="option11" data-price="30.00"
+                                                        data-priceen="0.33" data-name="Телеграм" data-nameen="Telegram"
+                                                        data-country="США" data-countryen="USA"
+                                                        data-iconurl="https://accishop.ru/img/flags/usa.svg"
+                                                        data-discount101_300="1" data-discount301_500="1"
+                                                        data-discount501_1000="1" data-discount1001_3000="2"
+                                                        data-discountover3000="2"
+                                                        style="--icon-url: url(https://accishop.ru/img/flags/usa.svg);">
+                                                        США
+                                                    </div>
+                                                    <div class="select-option" data-value="option12" data-price="48.00"
+                                                        data-priceen="0.33" data-name="Телеграм" data-nameen="Telegram"
+                                                        data-country="Великобритания" data-countryen="UK"
+                                                        data-iconurl="https://accishop.ru/img/flags/uk.svg"
+                                                        data-discount101_300="1" data-discount301_500="1"
+                                                        data-discount501_1000="2" data-discount1001_3000="2"
+                                                        data-discountover3000="2"
+                                                        style="--icon-url: url(https://accishop.ru/img/flags/uk.svg);">
+                                                        Великобритания</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="opt__inputWrapper">
+                                            <input type="text" required="" for="tgName" name="tgName"
+                                                placeholder="Telegram">
+                                            <div class="opt__rangeWrapper">
+                                                <input id="sliderValue" name="sliderValue" type="number" min="100"
+                                                    placeholder="Кол-во">
+                                                <div id="slider"
+                                                    class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+                                                    <div class="noUi-base">
+                                                        <div class="noUi-connects">
+                                                            <div class="noUi-connect"
+                                                                style="transform: translate(0%, 0px) scale(0, 1);">
+                                                            </div>
+                                                        </div>
+                                                        <div class="noUi-origin"
+                                                            style="transform: translate(-100%, 0px); z-index: 4;">
+                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0"
+                                                                tabindex="0" role="slider" aria-orientation="horizontal"
+                                                                aria-valuemin="100.0" aria-valuemax="10000.0"
+                                                                aria-valuenow="100.0" aria-valuetext="100.00">
+                                                                <div class="noUi-touch-area"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="itog itog_sum">
+                                            <span class="itog__span itog__span_total">Итог:</span>
+                                            <span id="itog__result">15000.00</span>
+                                            <input type="hidden" id="itog__result_input" name="itog__result_input"
+                                                value="15000.00">
+                                        </div>
+                                        <div class="btnFormWrapper">
+                                            <button class="btnForm btnForm_en">заказать</button>
+                                        </div>
+                                        <div class="itog">
+                                            <span class="itog__span itog__span_sale">Скидка:</span>
+
+                                            <span id="disc__result">0</span>%
+                                        </div>
+                                        <div class="itog">
+                                            <span class="itog__span itog__span_per">Цена за штуку:</span>
+                                            <span id="acc__result">150.00</span><span class="acc__curr"
+                                                style="font-family: Nunito;">₽</span>
+                                        </div>
+                                        <script>
+                                            if (window.location.href.includes("/en")) {
+                                                document.querySelector('.opt__h1').textContent = `SAVE MORE BY BUYING WHOLESALE!`;
+                                                document.querySelector('.opt__subtitle').textContent = `Place an order and get the best price!`;
+                                                document.querySelector('.opt__h3').textContent = `Сheckout`;
+                                                document.querySelector('.itog__span_sale').textContent = `Discount`;
+                                                document.querySelector('.itog__span_per').textContent = `Price for one`;
+                                                document.querySelector('.acc__curr').textContent = `$`;
+                                                document.querySelector('.itog__span_total').textContent = `Total`;
+                                                document.querySelector('.btnForm_en').textContent = `Order`;
+                                            }
+                                        </script>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sectionSeo -->
+                <section class="sectionSeo">
+                    <div class="container">
+                        <div class="seo">
+                            <div class="seo__item">
+                                <h3 class="seo__h3 seo__h3_cloud">
+                                    Облако тегов
+                                </h3>
+                                <div class="seo__tags">
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+                                    <a href="#" class="seo__tag">
+                                        # Аккаунты телеграм россия 30 дней
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="seo__item">
+                                <h3 class="seo__h3 seo__h3_last">
+                                    Последние покупки
+                                </h3>
+                                <div class="seo__last">
+                                    <div class="list-group">
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                        <span class="list-group-item">
+                                            <span class="list-group-span">Telegram аккаунт | Tdata | Авторег | +407
+                                                Румыния | от 5 дней</span>
+                                            <span class="list-group-span badge">19 мин. назад</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seo__item">
+                                <h3 class="seo__h3 seo__h3_acc">
+                                    ACCISHOP
+                                </h3>
+                                <p class="seo__txt">
+                                    Это магазин по продаже <span class="accent">качественных аккаунтов</span> соц сетей
+                                    и
+                                    почт. Наш магазин предоставляет
+                                    только качественные аккаунты. Мы стараемся вам дать самую <span
+                                        class="accent">низкую
+                                        цену</span>, что не может повлиять
+                                    на качество, мы не гонимся за количеством продаж, нам главное качество. Вы всегда
+                                    можете
+                                    написать администрации сайта с просьбой о какой либо помощи. Купить аккаунты
+                                    телеграм
+                                    или вк
+                                    по низкой цене <span class="accent">только в нашем маркектплейсе!</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__body">
+                    <a href="#" class="footer__item">
+                        Оптовый заказ
+                    </a>
+                    <a href="#" class="footer__item">
+                        FAQ
+                    </a>
+                    <a href="#" class="footer__item">
+                        Контакты
+                    </a>
+                    <a href="#" class="footer__item">
+                        О нас
+                    </a>
+                    <a href="#" class="footer__item">
+                        Каталог
+                    </a>
+                    <a href="#" class="footer__item">
+                        Партнёрство
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"
+        integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js2/script.js"></script>
+</body>
+
+</html>
