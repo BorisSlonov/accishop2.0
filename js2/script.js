@@ -1,4 +1,19 @@
 window.addEventListener("DOMContentLoaded", function () {
+    var scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    });
+
+    scrollTopBtn.addEventListener("click", function () {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+
     var menu = document.querySelector(".header__list"),
         menuItem = document.querySelectorAll(".header__link"),
         hamburger = document.querySelector(".header__burger");
@@ -41,8 +56,11 @@ window.addEventListener("DOMContentLoaded", function () {
         })
     }), 3500)
     this.setTimeout((() => {
-        this.document.querySelector('.telAnime__img_inst').classList.remove('animate__fadeInUp', 'animate__animated', 'animate__delay-4s')
-        this.document.querySelector('.telAnime__img_inst').classList.add('telAnime__img_visible')
+        if (document.querySelector('.telAnime__img_inst')) {
+            this.document.querySelector('.telAnime__img_inst').classList.remove('animate__fadeInUp', 'animate__animated', 'animate__delay-4s')
+            this.document.querySelector('.telAnime__img_inst').classList.add('telAnime__img_visible')
+        }
+
     }), 4000)
     ScrollOut({
         targets: ".scrolOut",
@@ -96,6 +114,115 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         initialSlide: 0, // Устанавливаем начальный активный слайд на первый
     });
+
+
+
+
+
+
+    const tabs = (headerSelector, tabSelector, contentSelector) => {
+        const header = document.querySelector(headerSelector),
+            tab = document.querySelectorAll(tabSelector),
+            content = document.querySelectorAll(contentSelector);
+
+        function hideTabContent() {
+            content.forEach((item) => {
+                item.classList.remove("tabs__item_active");
+            });
+
+            tab.forEach((item) => {
+                item.classList.remove("tabs__title_active");
+            });
+        }
+
+        function showTabContent(i = 0) {
+            tab[i].classList.add("tabs__title_active");
+            content[i].classList.add("tabs__item_active");
+            // Объявите флаг для отслеживания инициализации свайпера
+            var isSwiperInitialized = false;
+
+            // Проверьте, инициализирован ли свайпер
+            if (!isSwiperInitialized) {
+                var swiperCats1 = new Swiper(".swiperCats_1", {
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: ".swiperCats_1 .swiper-scrollbar",
+                        hide: false,
+                        draggable: true,
+                    },
+                });
+                var swiperCats2 = new Swiper(".swiperCats_2", {
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: ".swiperCats_2 .swiper-scrollbar",
+                        hide: false,
+                        draggable: true,
+                    },
+                });
+                var swiperCats3 = new Swiper(".swiperCats_3", {
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: ".swiperCats_3 .swiper-scrollbar",
+                        hide: false,
+                        draggable: true,
+                    },
+                });
+                var swiperCats4 = new Swiper(".swiperCats_4", {
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: ".swiperCats_4 .swiper-scrollbar",
+                        hide: false,
+                        draggable: true,
+                    },
+                });
+                var swiperCats5 = new Swiper(".swiperCats_5", {
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: ".swiperCats_5 .swiper-scrollbar",
+                        hide: false,
+                        draggable: true,
+                    },
+                });
+                isSwiperInitialized = true;
+            }
+        }
+
+        hideTabContent();
+        showTabContent();
+
+        if (document.querySelector(".block1 .tabs__item_tg")) {
+            document
+                .querySelector(".block1 .tabs__item_tg")
+                .classList.remove("tabs__item_active");
+        }
+
+        header.addEventListener("click", (e) => {
+            const target = e.target;
+            if (
+                target &&
+                (target.classList.contains(tabSelector.replace(/\./, "")) ||
+                    target.parentNode.classList.contains(tabSelector.replace(/\./, "")))
+            ) {
+                tab.forEach((item, i) => {
+                    if (target == item || target.parentNode == item) {
+                        hideTabContent();
+                        showTabContent(i);
+                    }
+                });
+            }
+        });
+    };
+
+    const categoriesTabs = document.querySelector(".categories-tabs");
+    if (categoriesTabs) {
+        tabs(
+            ".categories-tabs__titles",
+            ".categories-tabs__title",
+            ".categories-tabs__item-wrapper",
+            "tabs__title_active"
+        );
+    }
+
 
 });
 

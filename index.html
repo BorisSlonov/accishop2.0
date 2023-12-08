@@ -15,100 +15,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <style>
-        .scroll-block {
-            overflow: hidden;
-
-        }
-
-        .loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            background-color: #151430;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            animation: loader 0.75s 3.5s ease-in forwards;
-            z-index: 999999;
-        }
-
-        .progress-bar {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            background-image: url('img2/logo.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            position: relative;
-            animation: progress 3.5s ease-in-out forwards;
-        }
-
-        .progress-bar:before {
-            content: "";
-            position: absolute;
-            display: block;
-            top: 50%;
-            left: 50%;
-            animation: progress 4s ease-in-out forwards;
-            border-radius: 50%;
-            background-color: #fc37ff5b;
-            width: 160px;
-            height: 160px;
-        }
-
-        @keyframes loader {
-            to {
-                opacity: 0;
-                z-index: -1;
-            }
-        }
-
-        @keyframes progress {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(5);
-                opacity: 1;
-            }
-        }
-
-        @media(max-width:1023px) {
-            @keyframes progress {
-                0% {
-                    opacity: 0;
-                    transform: translate(-50%, -50%) scale(0);
-                }
-
-                100% {
-                    transform: translate(-50%, -50%) scale(2);
-                    opacity: 1;
-                }
-            }
-        }
-
-        @media(max-width:767px) {
-            @keyframes progress {
-                0% {
-                    opacity: 0;
-                    transform: translate(-50%, -50%) scale(0);
-                }
-
-                100% {
-                    transform: translate(-50%, -50%) scale(1);
-                    opacity: 1;
-                }
-            }
-        }
-    </style>
     <link rel="stylesheet" href="css2/style.css">
 </head>
 
@@ -163,10 +69,10 @@
                     <div class="header__item">
                         <div class="header__btns">
                             <a class="header__btn header__btn_1" href="#">
-                                <img loading="lazy" src="img2/icons/person.svg" alt="person">
+                                <img loading="lazy" src="img2/icons/flagRu.svg" alt="person">
                             </a>
                             <a class="header__btn header__btn_2" href="#">
-                                <img loading="lazy" src="img2/icons/cart.svg" alt="cart">
+                                <img loading="lazy" src="img2/icons/flagUsa.svg" alt="cart">
                             </a>
                         </div>
                     </div>
@@ -1115,25 +1021,33 @@
         </main>
         <footer class="footer">
             <div class="container">
-                <div class="footer__body">
-                    <a href="#" class="footer__item">
-                        Оптовый заказ
+                <div class="footer__wrapper">
+                    <a href="/" class="footer__logo">
+                        <img src="img2/logoFooter.svg" alt="">
                     </a>
-                    <a href="#" class="footer__item">
-                        FAQ
-                    </a>
-                    <a href="#" class="footer__item">
-                        Контакты
-                    </a>
-                    <a href="#" class="footer__item">
-                        О нас
-                    </a>
-                    <a href="#" class="footer__item">
-                        Каталог
-                    </a>
-                    <a href="#" class="footer__item">
-                        Партнёрство
-                    </a>
+                    <div class="footer__body">
+                        <a href="#" class="footer__item">
+                            Оптовый заказ
+                        </a>
+                        <a href="#" class="footer__item">
+                            FAQ
+                        </a>
+                        <a href="#" class="footer__item">
+                            Контакты
+                        </a>
+                        <a href="#" class="footer__item">
+                            О нас
+                        </a>
+                        <a href="#" class="footer__item">
+                            Каталог
+                        </a>
+                        <a href="#" class="footer__item">
+                            Партнёрство
+                        </a>
+                    </div>
+                    <button class="footer__up" id="scrollTopBtn" title="Go to top">
+                        <img src="img2/icons/upBtn.svg" alt="">
+                    </button>
                 </div>
             </div>
         </footer>
