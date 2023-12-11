@@ -145,6 +145,8 @@ window.addEventListener("DOMContentLoaded", function () {
             if (!isSwiperInitialized) {
                 var swiperCats1 = new Swiper(".swiperCats_1", {
                     slidesPerView: 5,
+                    spaceBetween: 80,
+
                     scrollbar: {
                         el: ".swiperCats_1 .swiper-scrollbar",
                         hide: false,
@@ -153,6 +155,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
                 var swiperCats2 = new Swiper(".swiperCats_2", {
                     slidesPerView: 5,
+                    spaceBetween: 80,
                     scrollbar: {
                         el: ".swiperCats_2 .swiper-scrollbar",
                         hide: false,
@@ -161,6 +164,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
                 var swiperCats3 = new Swiper(".swiperCats_3", {
                     slidesPerView: 5,
+                    spaceBetween: 80,
                     scrollbar: {
                         el: ".swiperCats_3 .swiper-scrollbar",
                         hide: false,
@@ -169,6 +173,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
                 var swiperCats4 = new Swiper(".swiperCats_4", {
                     slidesPerView: 5,
+                    spaceBetween: 80,
                     scrollbar: {
                         el: ".swiperCats_4 .swiper-scrollbar",
                         hide: false,
@@ -177,6 +182,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
                 var swiperCats5 = new Swiper(".swiperCats_5", {
                     slidesPerView: 5,
+                    spaceBetween: 80,
                     scrollbar: {
                         el: ".swiperCats_5 .swiper-scrollbar",
                         hide: false,
