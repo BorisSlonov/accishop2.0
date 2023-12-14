@@ -19,6 +19,7 @@ body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     scroll-behavior: smooth;
+    zoom: .9;
 }
 
 @media(max-width:767px) {
@@ -26,6 +27,7 @@ body {
     html,
     body {
         font-size: 14px;
+        zoom: 1;
     }
 }
 
