@@ -734,7 +734,8 @@ h4 {
 
 
 .catalogPage1::before,
-.page1::before {
+.page1::before,
+.sectionArticles::before {
     background: url(../img2/bg1.png)no-repeat center center;
     background-size: cover;
     content: ' ';
@@ -745,7 +746,7 @@ h4 {
     width: 100%;
     will-change: transform;
     z-index: -1;
-    animation: backgroundAnimation 20s ease-in-out infinite;
+    animation: backgroundAnimation 30s ease-in-out infinite;
     /* Продолжительность и тип анимации */
 
 }
@@ -3283,6 +3284,7 @@ h4 {
 /* article */
 
 .sectionArticles {
+    padding-top: 150px;
     padding-bottom: 100px;
 }
 
@@ -3497,6 +3499,27 @@ h4 {
     -webkit-text-fill-color: transparent;
 }
 
+.catalogPage1__body_icons {
+    position: relative;
+}
+
+.catalogPage1__body_icons .telAnime__icon {
+    width: 90px;
+}
+
+.catalogPage1__body_icons .telAnime__icon_ok {
+    left: 50%;
+}
+
+.catalogPage1__body_icons .telAnime__icon_tg {
+    bottom: 100px;
+}
+
+
+.catalogPage1__body_icons .telAnime__icon_tt {
+    top: auto;
+    right: 40%;
+}
 
 @media(max-width:1023px) {
 
@@ -3527,5 +3550,9 @@ h4 {
     .article__title_icon::before {
         width: 32px;
         height: 32px;
+    }
+
+    .catalogPage1__body_icons .telAnime__icon {
+        display: none;
     }
 }
